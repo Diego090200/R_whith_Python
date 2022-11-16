@@ -14,7 +14,12 @@ x = r(conexion)
 r.assign("mng_canal_conn", x)
 obtener_canales = "canales <- mng_canal_conn$find('{}')"
 canales_r = r(obtener_canales)
-print(type(canales_r))
 df = pd.DataFrame(canales_r)
-conversion = DataFramePython().lista_data_pandas(df)
-print(conversion[7])
+orden = ["Suisei Ch", "El Juaniquilador", "Pan Piano",
+         "Gawr Gura Ch", "Spreen", "Nanashi Mumei Ch",
+         "Vicke Blanka", "MissaSinfonia"]
+lista_de_data_frames = DataFramePython().lista_data_pandas(df)
+for i in range(len(orden)):
+    print(f"Canal: {orden[i]}")
+    print(f"\n{lista_de_data_frames[i]}\n")
+
